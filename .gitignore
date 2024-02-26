@@ -1,0 +1,4 @@
+__pycache__/
+.flake8
+db.sqlite3
+venv
