@@ -4,5 +4,5 @@ from sales.models import Sale
 
 @admin.register(Sale)
 class SalesAdmin(admin.ModelAdmin):
-    list_display = ('id', 'product', 'total_sale', 'customer')
+    list_display = ('product', 'quantity', 'total_sale', 'customer', 'data_hour')
     list_filter = ('product',)

@@ -18,6 +18,7 @@ class Sale(models.Model):
     price = models.FloatField(default=0.0)
     quantity = models.IntegerField(default=1)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+    data_hour = models.DateTimeField(auto_now=True)
 
     @property
     def total_sale(self):
