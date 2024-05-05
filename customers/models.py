@@ -12,6 +12,7 @@ class Customer(models.Model):
             MinLengthValidator(11, 'Digite no padrão (**) *****-****'),
             ]
     )
+    birthday = models.DateField(blank=True, null=True)
     bought = models.FloatField(default=0.0)
 
     def __str__(self):

@@ -3,8 +3,6 @@ from sales.models import Sale
 
 
 class SaleSerializer(serializers.ModelSerializer):
-    customer_name = serializers.CharField(source='customer')
-
     class Meta:
-        fields = ('id', 'product', 'price', 'quantity', 'customer_name')
         model = Sale
+        fields = ('product', 'price', 'quantity', 'data_hour', 'total_sale')
