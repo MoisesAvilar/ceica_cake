@@ -12,6 +12,11 @@ PRODUCT = (
     ('TORTA', 'Torta')
 )
 
+PAYMENT_STATUS = (
+    ('PENDENTE', 'Pendente'),
+    ('PAGO', 'Pago'),
+)
+
 
 class Sale(models.Model):
     product = models.CharField(max_length=30, choices=PRODUCT)
@@ -19,6 +24,8 @@ class Sale(models.Model):
     quantity = models.IntegerField(default=1)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
     data_hour = models.DateTimeField(auto_now=True)
+    payment_status = models.CharField(default='Pendente' ,max_length=20, choices=PAYMENT_STATUS)
+
 
     @property
     def total_sale(self):
