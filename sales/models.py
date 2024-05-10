@@ -23,17 +23,20 @@ class Sale(models.Model):
     price = models.FloatField(default=0.0)
     quantity = models.IntegerField(default=1)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
-    data_hour = models.DateTimeField(auto_now=True)
-    payment_status = models.CharField(default='Pendente' ,max_length=20, choices=PAYMENT_STATUS)
+    data_hour = models.DateTimeField(auto_now_add=True)
+    payment_status = models.CharField(default='Pendente', max_length=20, choices=PAYMENT_STATUS)
+    total = models.FloatField(default=0, editable=False)
 
-
-    @property
-    def total_sale(self):
-        return self.price * self.quantity
 
     def save(self, *args, **kwargs):
+        if self.pk:
+            existing_sale = Sale.objects.get(pk=self.pk)
+            self.customer.bought -= existing_sale.total
+
+        self.total = self.price * self.quantity
         super().save(*args, **kwargs)
-        self.customer.bought += self.total_sale
+
+        self.customer.bought += self.total
         self.customer.save()
 
     def __str__(self):
