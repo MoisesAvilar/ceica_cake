@@ -20,7 +20,7 @@ PAYMENT_STATUS = (
 
 class Sale(models.Model):
     product = models.CharField(max_length=30, choices=PRODUCT)
-    product_description = models.CharField(max_length=50, default='')
+    product_description = models.CharField(max_length=50, default='', editable=False)
     price = models.FloatField(default=0.0)
     quantity = models.IntegerField(default=1)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
