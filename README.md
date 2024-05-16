@@ -4,7 +4,7 @@ Este projeto é uma API Django RESTful para gerenciamento de clientes e vendas, 
 
 ## Objetivo
 
-Esse projeto surgiu a partir da idéia de registrar vendas, produtos e clientes para o ateliê de doces que minha tem. Basicamente o objetivo é tornar digital o que era físico, pois ela sempre anotava suas vendas e relatórios em papel. Nesse mesmo período foi quando eu estava fazendo um curso de `desenvolvimento de APIs com Django Rest Framework`, daí juntei o útil ao agradável colocando em prática tudo o que eu tinha aprendido (e ainda continuo aprendendo).
+Esse projeto surgiu a partir da idéia de registrar vendas, produtos e clientes para o ateliê de doces que minha mãe tem. Basicamente o objetivo é tornar digital o que era físico, pois ela sempre anotava suas vendas e relatórios em papel. Nesse mesmo período foi quando eu estava fazendo um curso de `desenvolvimento de APIs com Django Rest Framework`, daí juntei o útil ao agradável colocando em prática tudo o que eu tinha aprendido (e ainda continuo aprendendo).
 
 ## Modelos
 
