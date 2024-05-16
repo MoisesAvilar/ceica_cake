@@ -1,6 +1,10 @@
-# Projeto API Django RESTful
+# API Ceicacake
 
 Este projeto é uma API Django RESTful para gerenciamento de clientes e vendas, com suporte a autenticação via JWT.
+
+## Objetivo
+
+Esse projeto surgiu a partir da idéia de registrar vendas, produtos e clientes para o ateliê de doces que minha tem. Basicamente o objetivo é tornar digital o que era físico, pois ela sempre anotava suas vendas e relatórios em papel. Nesse mesmo período foi quando eu estava fazendo um curso de `desenvolvimento de APIs com Django Rest Framework`, daí juntei o útil ao agradável colocando em prática tudo o que eu tinha aprendido (e ainda continuo aprendendo).
 
 ## Modelos
 
@@ -17,7 +21,7 @@ O modelo `Customer` representa os clientes da aplicação.
 
 O modelo `Sale` representa as vendas realizadas na aplicação.
 
-- **product**: Produto vendido;
+- **product**: Produto vendido.
 - **product_description**: Descrição do produto (gerada automaticamente).
 - **price**: Preço unitário do produto.
 - **quantity**: Quantidade vendida.
