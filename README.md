@@ -17,7 +17,7 @@ O modelo `Customer` representa os clientes da aplicação.
 
 O modelo `Sale` representa as vendas realizadas na aplicação.
 
-- **product**: Produto vendido.
+- **product**: Produto vendido;
 - **product_description**: Descrição do produto (gerada automaticamente).
 - **price**: Preço unitário do produto.
 - **quantity**: Quantidade vendida.
