@@ -3,13 +3,15 @@ from customers.models import Customer
 
 
 PRODUCT = (
-    ('BOLO_DE_POTE_P', 'Bolo de pote P'),
-    ('BOLO_DE_POTE_G', 'Bolo de pote G'),
+    ('TORTA', 'Torta'),
     ('BRASINHA_COMUM', 'Brasinha comum'),
     ('BRASINHA_GOURMET', 'Brasinha gourmet'),
+    ('BOLO_DE_POTE_P', 'Bolo de pote P'),
+    ('BOLO_DE_POTE_G', 'Bolo de pote G'),
+    ('BOLO_VULCAO_P', 'Bolo vulcão P'),
+    ('BOLO_VULCAO_M', 'Bolo vulcão M'),
+    ('BOLO_VULCAO_G', 'Bolo vulcão G'),
     ('BOLO_DE_ANIVERSARIO', 'Bolo de aniversário'),
-    ('BOLO_VULCAO', 'Bolo vulcão'),
-    ('TORTA', 'Torta')
 )
 
 PAYMENT_STATUS = (
