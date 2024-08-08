@@ -4,6 +4,7 @@ from customers.models import Customer
 
 PRODUCT = (
     ('TORTA', 'Torta'),
+    ('BROWNIE', 'Brownie'),
     ('BRASINHA_COMUM', 'Brasinha comum'),
     ('BRASINHA_GOURMET', 'Brasinha gourmet'),
     ('BOLO_DE_POTE_P', 'Bolo de pote P'),
