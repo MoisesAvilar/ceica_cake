@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-9&p8#&47^u+h0l9jvd1ofq#=w1uu64179&fa94(x650en^*9+9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['ceicacake.vercel.app', 'ceicacake.pythonanywhere.com']
 
 
 # Application definition
@@ -55,10 +55,24 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = False
+
 CORS_ALLOWED_ORIGINS = [
+    'https://ceicacake.vercel.app',
     'http://192.168.3.6:3000',
     'http://localhost:3000',
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://ceicacake.vercel.app',
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 ROOT_URLCONF = 'app.urls'
 
