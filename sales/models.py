@@ -12,6 +12,7 @@ PRODUCT = (
     ('BOLO_VULCAO_P', 'Bolo vulcão P'),
     ('BOLO_VULCAO_M', 'Bolo vulcão M'),
     ('BOLO_VULCAO_G', 'Bolo vulcão G'),
+    ('COPO_DA_FELICIDADE', 'Copo da felicidade'),
     ('BOLO_DE_ANIVERSARIO', 'Bolo de aniversário'),
 )
 
