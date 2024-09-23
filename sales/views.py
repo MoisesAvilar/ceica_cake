@@ -7,6 +7,7 @@ from sales.models import Sale
 from sales.serializers import SaleSerializer
 from sales.product_list import PRODUCT
 
+
 class SalesCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = Sale.objects.all()
@@ -21,7 +22,7 @@ class SalesRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
 
 class ProductListView(APIView):
     permission_classes = (IsAuthenticated,)
-    
+
     def get(self, request):
-        products = [{'value': key, 'label': value} for key, value in PRODUCT]
+        products = [{"value": key, "label": value} for key, value in PRODUCT]
         return JsonResponse(products, safe=False)
