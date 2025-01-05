@@ -16,7 +16,7 @@ mark_as_paid.short_description = 'Marcar como pago'
 class SalesAdmin(admin.ModelAdmin):
     list_display = (
         'product', 'quantity', 'price', 'customer_link', 'data_hour',
-        'payment_status', 'total',
+        'payment_status', 'total', 'user',
     )
 
     list_filter = (

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from customers.models import Customer
 from sales.product_list import PRODUCT
 
@@ -17,6 +18,7 @@ class Sale(models.Model):
     data_hour = models.DateTimeField(auto_now_add=True)
     payment_status = models.CharField(default='PENDENTE', max_length=20, choices=PAYMENT_STATUS)
     total = models.FloatField(default=0, editable=False)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if self.pk:

@@ -9,6 +9,7 @@ class SaleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sale
         fields = '__all__'
+        read_only_fields = ('user',)
 
     def get_product_name(self, obj):
         return obj.get_product_display()
