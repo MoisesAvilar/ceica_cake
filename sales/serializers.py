@@ -5,6 +5,7 @@ from rest_framework import serializers
 class SaleSerializer(serializers.ModelSerializer):
     product_name = serializers.SerializerMethodField()
     customer_name = serializers.SerializerMethodField()
+    user_name = serializers.SerializerMethodField()
 
     class Meta:
         model = Sale
@@ -16,3 +17,8 @@ class SaleSerializer(serializers.ModelSerializer):
 
     def get_customer_name(self, obj):
         return obj.customer.name
+
+    def get_user_name(self, obj):
+        if obj.user:
+            return obj.user.username
+        return None
