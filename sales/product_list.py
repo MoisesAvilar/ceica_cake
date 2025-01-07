@@ -1,6 +1,10 @@
 PRODUCT = (
-    ('TORTA', 'Torta'),
+    ('TRUFA', 'Trufa'),
     ('BROWNIE', 'Brownie'),
+    ('TORTA', 'Torta'),
+    ('TORTA_DE_PAO', 'Torta de pão'),
+    ('TORTA_NO_POTE', 'Torta no pote'),
+    ('BRIGADEIRO', 'Brigadeiro'),
     ('BRASINHA_COMUM', 'Brasinha comum'),
     ('BRASINHA_GOURMET', 'Brasinha gourmet'),
     ('BOLO_DE_POTE_P', 'Bolo de pote P'),
@@ -9,9 +13,9 @@ PRODUCT = (
     ('BOLO_VULCAO_M', 'Bolo vulcão M'),
     ('BOLO_VULCAO_G', 'Bolo vulcão G'),
     ('BOLO_VULCAO_GG', 'Bolo vulcão GG'),
-    ('COPO_DA_FELICIDADE', 'Copo da felicidade'),
     ('BOLO_DE_ANIVERSARIO', 'Bolo de aniversário'),
     ('FATIA_COM_DOCE', 'Fatia com doce'),
     ('FATIA_SEM_DOCE', 'Fatia sem doce'),
+    ('COPO_DA_FELICIDADE', 'Copo da felicidade'),
     ('PANETONE_TRUFADO', 'Panetone trufado'),
 )
