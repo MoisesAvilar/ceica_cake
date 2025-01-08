@@ -21,20 +21,21 @@ class Sale(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
     def save(self, *args, **kwargs):
+        self.total = self.price * self.quantity
+
         if self.pk:
             existing_sale = Sale.objects.get(pk=self.pk)
-            self.customer.bought -= existing_sale.total
+            previous_total = existing_sale.total
 
-            if existing_sale.payment_status == 'PENDENTE' and self.payment_status == 'PAGO':
-                self.customer.bought -= self.total
-            elif existing_sale.payment_status == 'PAGO' and self.payment_status == 'PENDENTE':
-                self.customer.bought += self.total
+            if existing_sale.payment_status == 'PAGO':
+                self.customer.bought -= previous_total
+            elif existing_sale.payment_status == 'PENDENTE':
+                self.customer.debt -= previous_total
 
-        self.total = self.price * self.quantity
+        if self.payment_status == 'PAGO':
+            self.customer.bought += self.total
+        elif self.payment_status == 'PENDENTE':
+            self.customer.debt += self.total
+
         super().save(*args, **kwargs)
-
-        self.customer.bought += self.total
         self.customer.save()
-
-    def __str__(self):
-        return self.product

@@ -14,6 +14,7 @@ class Customer(models.Model):
     )
     birthday = models.DateField(blank=True, null=True)
     bought = models.FloatField(default=0.0)
+    debt = models.FloatField(default=0.0)
 
     def __str__(self):
         return self.name
