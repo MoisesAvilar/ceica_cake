@@ -36,6 +36,7 @@ PROJECT_APPS = [
     'rest_framework_simplejwt',
     'corsheaders',
 
+    'cashflow.apps.CashflowConfig',
     'customers.apps.CustomersConfig',
     'sales.apps.SalesConfig',
 ]
