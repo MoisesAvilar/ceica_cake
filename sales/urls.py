@@ -6,6 +6,7 @@ from sales.views import (
     SalesByProductView,
     SalesByClientView,
     SalesByPeriodView,
+    CustomerSalesHistoryView
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path("sales-by-product/", SalesByProductView.as_view(), name="sales-by-product"),
     path("sales-by-client/", SalesByClientView.as_view(), name="sales-by-client"),
     path("sales-by-period/", SalesByPeriodView.as_view(), name="sales-by-period"),
+    path('customers/<int:customer_id>/sales/', CustomerSalesHistoryView.as_view(), name='customer-sales-history'),
 ]
