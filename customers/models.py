@@ -16,5 +16,11 @@ class Customer(models.Model):
     bought = models.FloatField(default=0.0)
     debt = models.FloatField(default=0.0)
 
+    def save(self, *args, **kwargs):
+        if self.name:
+            self.name = self.name.title()
+
+        super(Customer, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name
