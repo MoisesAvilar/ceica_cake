@@ -8,8 +8,19 @@ from django.utils.dateparse import parse_datetime
 from app.pagination import StandardResultsSetPagination
 
 from sales.models import Sale
-from sales.serializers import SaleSerializer
+from sales.serializers import SaleSerializer, CheckoutSerializer
 from sales.product_list import PRODUCT
+
+
+class CheckoutView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        serializer = CheckoutSerializer(data=request.data, context={"request": request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(status=201)
+        return Response(serializer.errors, status=400)
 
 
 class SalesCreateListView(generics.ListCreateAPIView):
@@ -18,8 +29,8 @@ class SalesCreateListView(generics.ListCreateAPIView):
     serializer_class = SaleSerializer
     pagination_class = StandardResultsSetPagination
     filter_backends = [filters.OrderingFilter]
-    ordering_fields = ['data_hour']
-    ordering = ['-data_hour']
+    ordering_fields = ["data_hour"]
+    ordering = ["-data_hour"]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -122,18 +133,10 @@ class SalesByPeriodView(APIView):
 
 
 class CustomerSalesHistoryView(generics.ListAPIView):
-    """
-    Retorna uma lista paginada de todas as vendas para um cliente específico.
-    """
     permission_classes = (IsAuthenticated,)
     serializer_class = SaleSerializer
     pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
-        """
-        Este método filtra o queryset para retornar apenas as vendas
-        do cliente cujo ID foi passado na URL.
-        """
-        customer_id = self.kwargs['customer_id']
-        
-        return Sale.objects.filter(customer__id=customer_id).order_by('-data_hour')
+        customer_id = self.kwargs["customer_id"]
+        return Sale.objects.filter(customer__id=customer_id).order_by("-data_hour")

@@ -15,6 +15,7 @@ class Customer(models.Model):
     birthday = models.DateField(blank=True, null=True)
     bought = models.FloatField(default=0.0)
     debt = models.FloatField(default=0.0)
+    is_active = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
         if self.name:

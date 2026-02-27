@@ -6,10 +6,12 @@ from sales.views import (
     SalesByProductView,
     SalesByClientView,
     SalesByPeriodView,
-    CustomerSalesHistoryView
+    CustomerSalesHistoryView,
+    CheckoutView
 )
 
 urlpatterns = [
+    path("checkout/", CheckoutView.as_view(), name="checkout"),
     path("sales/", SalesCreateListView.as_view(), name="sales-create-list"),
     path("sales/<int:pk>/", SalesRetrieveUpdateDestroy.as_view(), name="sales-detail-view"),
     path("products/", ProductListView.as_view(), name="product-list"),
